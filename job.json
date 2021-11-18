@@ -1,0 +1,26 @@
+{
+    "jobName": "local-sequence-alignment-job", 
+    "jobQueue": "local-sequence-alignment-gpu-queue", 
+    "dependsOn": [], 
+    "jobDefinition": "local-sequence-alignment-job-definition", 
+    "parameters": {}, 
+    "containerOverrides": {
+        "environment": [
+            {
+                "name": "MAIN_DIR", 
+                "value": "s3://local-sequence-alignment"
+            },
+            {
+                "name": "RUN_SCRIPT", 
+                "value": "s3://local-sequence-alignment/run.sh"
+            },
+            {
+                "name": "SEQ_ALIGN_SCRIPT",
+                "value": "s3://local-sequence-alignment/seqalign.py"
+            }
+        ]
+    }, 
+    "retryStrategy": {
+        "attempts": 1
+    }
+}

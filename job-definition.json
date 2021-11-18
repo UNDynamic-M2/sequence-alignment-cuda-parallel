@@ -1,0 +1,26 @@
+{
+    "jobDefinitionName": "local-sequence-alignment-job-definition", 
+    "type": "container", 
+    "parameters": {}, 
+    "containerProperties": {
+        "mountPoints": [], 
+        "image": "ossedb/local-sequence-alignment", 
+        "environment": [],
+        "command": [],
+        "privileged": true,
+        "resourceRequirements" : [
+            {
+                "type" : "GPU",
+                "value" : "1"
+            },
+            {
+                "type": "VCPU",
+                "value": "4"
+            },
+            {
+                "type": "MEMORY",
+                "value": "8192"
+            }
+        ]
+    }
+}
